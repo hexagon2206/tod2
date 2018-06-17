@@ -33,7 +33,7 @@ def handler(requestData,data):
 
 
     if "delete" in paras:
-      i=len(paras)
+      i=len(players)
       while i>0:
         i=i-1
         if players[i][2] == paras["delete"] :

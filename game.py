@@ -27,15 +27,15 @@ def handler(requestData,data):
       if currentPlayer in setting:
         task = e
         break
-    if e == None :
+    if task == None :
       html += "no task found for {}<br>".format(currentPlayer) 
     else:
       selectionList.remove(e)
       history.append(e)
     
-      html += e[2] + "<br><br><br>"
-      html += "{} is next,<br>".format(players[0])
-      html = "<a href=\"{}?truth\">Truth</a><br>\n".format(requestData[0][0])     
-      html = "<a href=\"{}?dare\">Dare</a><br>\n".format(requestData[0][0])     
+  html += "<br><br><br>"
+  html += "{} is next,<br>".format(players[0])
+  html += "<a href=\"{}?truth\">Truth</a><br>\n".format(requestData[0][0])     
+  html += "<a href=\"{}?dare\">Dare</a><br>\n".format(requestData[0][0])     
       
   return 200,'text/html',html.encode('utf8')

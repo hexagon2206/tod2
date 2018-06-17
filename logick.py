@@ -63,22 +63,19 @@ def processTasks(tasks,players):
   return result
 
 
-taskList=[]
-def loadTaskList(fileName):
-  global taskList
-  
+def loadList(targetList,fileName):
+
   with open(fileName) as data_file:   
     data = json.load(data_file)   
   for e in data["data"]:
-    taskList.append((e["needs"],set(e["tags"]),e["text"]))
+    targetList.append((e["needs"],set(e["tags"]),e["text"]))
 
 
-def taskSet(playerList):
-  global taskList
+def taskSet(taskList,playerList):
   processedTaks = processTasks(taskList,playerList)
   return processedTaks
 
-def questionSet(playerList):
+def questionSet(questionList,playerList):
 #  global taskList
 #  processedTaks = processTasks(taskList,playerList)
   return []
